@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>首页</title>
+	<style type="text/css">
+	/*	body{background: #f6f6f6;}*/
+		.home-img{width:100%;min-height:100px;position: relative;}
+		.home-img img{width:100%;height:100%;}
+		*{margin:0 auto;padding:0;}
+		.box{perspective: 1000px;position: absolute;top:28%;}
+		.cube{width:80px;height:80px;position: relative;
+			-webkit-transform: rotateX(-50deg) rotateY(50deg);
+			-webkit-transform-style: preserve-3d;animation:rotate 20s infinite linear;
+			-webkit-animation:rotate 20s infinite linear;-moz-animation:rotate 20s infinite linear;-ms-animation:rotate 20s infinite linear; -o-animation:rotate 20s infinite linear;}
+		@-webkit-keyframes rotate{
+			0%{
+				transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+				-webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+			}
+			100%{
+				transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+				-webkit-transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+			}
+		}
+		.cube>div{width:80px;height:80px;text-align: center;line-height: 80px;font-size:15px;font-weight: bold;color:#fff;background: rgba(0,0,0,0.5);border:1px solid #fff;position: absolute;top:0;left:0;transition: transform 5s ease-in;}
+		.front{transform:translateZ(40px);}
+		.back{transform:translateZ(-40px) rotateY(-180deg);}
+		.left{transform: translateX(-40px) rotateY(-90deg);}
+		.right{transform: translateX(40px) rotateY(90deg);}
+		.top{transform: translateY(-40px) rotateX(90deg);}
+		.bottom{transform: translateY(40px) rotateX(-90deg);}
+
+		.cube>span{display: block;width:40px;height:40px;border:1px solid black;background: #666;position: absolute;top:20px;left:20px;}
+		.cube>span img{width:100%;height:100%;}
+		.in-front{transform:translateZ(20px);}
+		.in-back{transform: translateZ(-20px) rotateY(-180deg);}
+		.in-left{transform: translateX(-20px) rotateY(-90deg);}
+		.in-right{transform: translateX(20px) rotateY(90deg);}
+		.in-top{transform: translateY(-20px) rotateX(-90deg);}
+		.in-bottom{transform: translateY(20px) rotateX(90deg);}
+		.box:hover .front{transform:translateZ(-80px) rotateY(-180deg);}
+		.box:hover .back{transform: translateZ(80px) rotateY(180deg);}
+		.box:hover .left{transform: translateX(80px) rotateY(90deg);}
+		.box:hover .right{transform: translateX(-80px) rotateY(-90deg);}
+		.box:hover .top{transform: translateY(80px) rotateX(-90deg);}
+		.box:hover .bottom{transform: translateY(-80px) rotateX(90deg);}
+
+		h4{width:100%;height:50px;line-height:50px;box-sizing: border-box;padding:0px 10px;font-size:20px;background:#fff;text-align:center;}
+		.home-box{width:100%;min-height:30px;padding-bottom:20px; }
+		.home-box-title{width:100%;min-height:30px;line-height:30px;box-sizing: border-box;padding:0px 30px;background:#ffbf00;color:#fff;text-align: center;}
+		.home-box-img{width:200px;min-height: 30px;padding:50px;background:url(./images/bg.jpg) no-repeat;background-size:100% 100%;}
+		.home-box-img img{width:100%;}
+	</style>
+</head>
+<body>
+	<div class="home">
+		<div class="home-img">
+			<img src="./images/2.jpg">
+			<div class="box">
+				<div class="cube">
+					<div class="front">CSS3</div>
+					<div class="back">CSS</div>
+					<div class="left">HTML5</div>
+					<div class="right">HTML</div>
+					<div class="top">JS</div>
+					<div class="bottom">JQUERY</div>
+					<span class="in-front"><img src="./images/cube/1.jpg"></span>
+					<span class="in-back"><img src="./images/cube/2.jpg"></span>
+					<span class="in-left"><img src="./images/cube/3.jpg"></span>
+					<span class="in-right"><img src="./images/cube/4.jpg"></span>
+					<span class="in-top"><img src="./images/cube/5.jpg"></span>
+					<span class="in-bottom"><img src="./images/cube/6.jpg"></span>
+				</div>
+			</div>
+		</div>
+		<div class="home-nav">
+			<h4>纯css样式</h4>
+			<div class="home-box">
+				<div class="home-box-title">立方体结构</div>
+				<div class="home-box-img"><a href="http://TIANYUXIN.github.io/Rotate-the-cube/" target="_blank"><img src="./images/o-cube.jpeg"></a></div>
+			</div>
+			<div class="home-box">
+				<div class="home-box-title">魔方</div>
+				<div class="home-box-img"><a href="http://TIANYUXIN.github.io/cube/" target="_blank"><img src="./images/p-cube.jpg"></a></div>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="./js/jquery1-12-1.js"></script>
+<script type="text/javascript">
+	var imgwidth=$('.home-img').width();
+	var boxleft=(imgwidth-80)/2;
+	$('.box').css('left',boxleft);
+</script>
+</html>		
